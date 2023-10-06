@@ -1,0 +1,139 @@
+*{
+ margin :0;
+ padding :0;
+ box-sizing : border-box;
+ list-style-type: none;
+ text-decoration: none;
+ }
+
+body{
+ width:100%;
+ height:100vh;
+ overflow-x:hidden;
+}
+
+:root{
+    --navbar_background_color : #641220;
+    --all_btn_bg_color : #ffffff;
+    --all_btn_hover_bg : #a11d33;
+    --footer-bg: #6e1423;
+    --max-w : 1400px;
+}
+
+header{
+    background-color: var(--navbar_background_color);
+    
+}
+
+.navbar{
+    max-width: var(--max-w);
+    margin: auto;
+    padding: 5px 20px 5px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.menu_container_ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.menu_container_ul li a{
+    color: white;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.logo a{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+
+.nav_btn{
+    background-color: var(--all_btn_bg_color);
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+    border: none;
+    padding: 6px 15px ;
+    border-radius: 20px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide_btn{
+    background-color: var(--all_btn_hover_bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: 0.4s;
+    color: white;
+}
+
+.nav_btn:hover .slide_btn{
+    transform: translateX(0%);
+
+}
+
+
+.menu_bar{
+    display: none;
+}
+
+
+/* navbar media query */
+
+
+@media screen and (max-width:450px) {
+    .menu_container{
+        background-color: var(--navbar_background_color);
+        position: absolute;
+        top: 27px;
+        left: 0;
+        width: 100%;
+        padding: 30px;
+        border-top: 1.3px solid white;
+        display: none;
+    }
+
+    .menu_container.activate{
+        display: block;
+    }
+   
+    .menu_container_ul{
+        list-style-type: none;
+        display: flex;
+        
+        gap: 1rem;
+        
+        flex-direction: column;
+    }
+    
+    .menu_bar{
+        display: block;
+    }
+
+    .bar{
+        background-color: white;
+        width: 24px;
+        height: 2px;
+        margin: 3px;
+    }
+}
+
+
